@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class App
 {
-    public static int getCountOfRepetitions() {
+    private static int getCountOfRepetitions() {
         Scanner scanner = new Scanner(System.in);
         int repetitions;
 
@@ -18,7 +18,7 @@ public class App
         return repetitions;
     }
 
-    public static void printTable(long addTime, long deleteTime, long getTime, int repetitions, String list) {
+    private static void printTable(long addTime, long deleteTime, long getTime, int repetitions, String list) {
         System.out.println(list + " table:");
         System.out.printf("%-10s%-10s%-5s%n", "Method" + "\t", "Repetitions" + "\t", "Time");
 
@@ -42,21 +42,21 @@ public class App
         int repetitions = getCountOfRepetitions();
 
         if (repetitions != 0) {
-//            ArrayList<Integer> arrayList = new ArrayList<>();
-//            LinkedList<Integer> linkedList = new LinkedList<>();
-//            Timer timer = new Timer();
-//
-//            long arrayListAddTime = timer.measureAddTime(arrayList, repetitions);
-//            long linkedListAddTime = timer.measureAddTime(linkedList, repetitions);
-//
-//            long arrayListDeleteTime = timer.measureDeleteTime(arrayList, repetitions);
-//            long linkedListDeleteTime = timer.measureDeleteTime(linkedList, repetitions);
-//
-//            long arrayListGetTime = timer.measureGetTime(arrayList, repetitions);
-//            long linkedListGetTime = timer.measureGetTime(linkedList, repetitions);
-//
-//            printTable(arrayListAddTime, arrayListDeleteTime, arrayListGetTime, repetitions, "ArrayList");
-//            printTable(linkedListAddTime, linkedListDeleteTime, linkedListGetTime, repetitions, "LinkedList");
+            ArrayList<Integer> arrayList = new ArrayList<>();
+            LinkedList<Integer> linkedList = new LinkedList<>();
+            Timer timer = new Timer(repetitions);
+
+            long arrayListAddTime = timer.measureAddTime(arrayList);
+            long linkedListAddTime = timer.measureAddTime(linkedList);
+
+            long arrayListDeleteTime = timer.measureDeleteTime(arrayList);
+            long linkedListDeleteTime = timer.measureDeleteTime(linkedList);
+
+            long arrayListGetTime = timer.measureGetTime(arrayList);
+            long linkedListGetTime = timer.measureGetTime(linkedList);
+
+            printTable(arrayListAddTime, arrayListDeleteTime, arrayListGetTime, repetitions, "ArrayList");
+            printTable(linkedListAddTime, linkedListDeleteTime, linkedListGetTime, repetitions, "LinkedList");
         }
     }
 }

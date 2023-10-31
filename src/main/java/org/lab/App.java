@@ -4,9 +4,16 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 
+/**
+ * The main class
+ */
 public class App
 {
-    private static int getCountOfRepetitions() {
+    /**
+     * Allows you to get the number of repetitions from the user.
+     * @return int - the number of repetitions.
+     * */
+    private static int getNumberOfRepetitions() {
         Scanner scanner = new Scanner(System.in);
         int repetitions;
 
@@ -18,6 +25,9 @@ public class App
         return repetitions;
     }
 
+    /**
+     * Allows you to print the table with results of the measurement.
+     * */
     private static void printTable(long addTime, long deleteTime, long getTime, int repetitions, String list) {
         System.out.println(list + " table:");
         System.out.printf("%-10s%-10s%-5s%n", "Method" + "\t", "Repetitions" + "\t", "Time");
@@ -38,8 +48,12 @@ public class App
         System.out.println();
     }
 
+    /**
+     * The main method.
+     * @param args - arguments of the main method.
+     */
     public static void main(String[] args) {
-        int repetitions = getCountOfRepetitions();
+        int repetitions = getNumberOfRepetitions();
 
         if (repetitions != 0) {
             ArrayList<Integer> arrayList = new ArrayList<>();

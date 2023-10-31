@@ -8,15 +8,31 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
+/**
+ * Unit test for Timer class.
+ */
 public class TimerTest {
+    /**
+     * The number of repetitions.
+     * */
     private final int repetitions;
+
+    /**
+     * Instance of the Timer class.
+     * */
     private final Timer timer;
 
+    /**
+     * Default constructor.
+     * */
     public TimerTest() {
         this.repetitions = 10000;
         this.timer = new Timer(this.repetitions);
     }
 
+    /**
+     * Test measureAddTime.
+     * */
     @Test
     public void measureAddTime() {
         List<Integer> arrayList = new ArrayList<>();
@@ -42,6 +58,9 @@ public class TimerTest {
         assertTrue(measuredLinkedTime >= 0 && linkedTime - 2 <= measuredLinkedTime && linkedTime + 2 >= measuredLinkedTime);
     }
 
+    /**
+     * Test measureGetTime.
+     * */
     @Test
     public void measureGetTime() {
         List<Integer> arrayList = new ArrayList<>();
@@ -73,6 +92,9 @@ public class TimerTest {
         assertTrue(measuredLinkedTime >= 0 && linkedTime - 4 <= measuredLinkedTime && linkedTime + 4 >= measuredLinkedTime);
     }
 
+    /**
+     * Test measureDeleteTime.
+     * */
     @Test
     public void measureDeleteTime() {
         List<Integer> arrayList = new ArrayList<>();
